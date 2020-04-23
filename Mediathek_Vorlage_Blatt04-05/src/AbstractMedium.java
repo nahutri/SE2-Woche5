@@ -1,5 +1,5 @@
 
-public abstract class AbstractMedium
+public abstract class AbstractMedium implements Medium
 {
     protected String _titel;
     protected String _kommentar;
@@ -62,6 +62,11 @@ public abstract class AbstractMedium
     {
         assert titel != null : "Vorbedingung verletzt: null";
         _titel = titel;
+    }
+
+    public Geldbetrag berechneMietgebuehr(int mietTage)
+    {
+        return new Geldbetrag(300 * mietTage);
     }
 
 }

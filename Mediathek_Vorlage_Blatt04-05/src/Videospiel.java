@@ -110,4 +110,10 @@ class Videospiel extends AbstractMedium implements Medium
                 + "\n" + "    " + "Kommentar: " + _kommentar + "\n" + "    "
                 + "System: " + _system + "\n";
     }
+
+    @Override
+    public Geldbetrag berechneMietgebuehr(int mietTage)
+    {
+        return super.berechneMietgebuehr(mietTage);
+    }
 }

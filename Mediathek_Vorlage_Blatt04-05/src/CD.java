@@ -137,4 +137,12 @@ class CD extends AbstractMedium implements Medium
         return super.getFormatiertenString() + " " + "Interpret: " + _interpret
                 + "\n" + "    " + "Spiellänge: " + _spiellaenge + "\n";
     }
+
+    @Override
+    public Geldbetrag berechneMietgebuehr(int mietTage)
+    {
+
+        return super.berechneMietgebuehr(mietTage);
+    }
+
 }
