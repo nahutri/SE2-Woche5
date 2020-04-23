@@ -5,22 +5,12 @@
  * @author SE2-Team
  * @version SoSe 2012
  */
-class Videospiel implements Medium
+class Videospiel extends AbstractMedium implements Medium
 {
     /**
      * Das System, auf dem das Spiel lauffähig ist
      */
     private String _system;
-
-    /**
-     * Ein Kommentar zum Medium
-     */
-    private String _kommentar;
-
-    /**
-     * Der Titel des Mediums
-     */
-    private String _titel;
 
     /**
      * Initialisiert ein neues Videospiel.
@@ -39,11 +29,11 @@ class Videospiel implements Medium
      */
     public Videospiel(String titel, String kommentar, String system)
     {
+        super(titel, kommentar);
         assert titel != null : "Vorbedingung verletzt: titel != null";
         assert kommentar != null : "Vorbedingung verletzt: kommentar != null";
         assert system != null : "Vorbedingung verletzt: system != null";
-        _titel = titel;
-        _kommentar = kommentar;
+
         _system = system;
     }
 
