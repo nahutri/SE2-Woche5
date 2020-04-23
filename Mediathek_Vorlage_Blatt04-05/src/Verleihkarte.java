@@ -109,7 +109,9 @@ class Verleihkarte
     {
         // TODO für Aufgabe 4.2.4: Dummy-Implementation ersetzen, sobald ein
         // Medium die benötigte Funktionialität anbietet.
-        return new Geldbetrag(0);
+
+        //return new Geldbetrag(0);
+        return _medium.berechneMietgebuehr(getAusleihdauer());
     }
 
     /**
@@ -120,7 +122,8 @@ class Verleihkarte
      */
     public int getAusleihdauer()
     {
-        return Datum.heute().tageSeit(getAusleihdatum()) + 1;
+        return Datum.heute()
+            .tageSeit(getAusleihdatum()) + 1;
     }
 
     @Override
@@ -144,9 +147,12 @@ class Verleihkarte
         {
             Verleihkarte other = (Verleihkarte) obj;
 
-            if (other.getAusleihdatum().equals(_ausleihdatum)
-                    && other.getEntleiher().equals(_entleiher)
-                    && other.getMedium().equals(_medium))
+            if (other.getAusleihdatum()
+                .equals(_ausleihdatum)
+                    && other.getEntleiher()
+                        .equals(_entleiher)
+                    && other.getMedium()
+                        .equals(_medium))
 
                 result = true;
         }
