@@ -5,7 +5,7 @@
  * @author SE2-Team
  * @version SoSe 2019
  */
-class CD implements Medium
+class CD extends AbstractMedium implements Medium
 {
     /**
      * Der Interpret der CD
@@ -16,17 +16,6 @@ class CD implements Medium
      * Die Spiellänge der CD in Minuten
      */
     private int _spiellaenge;
-
-    /**
-     * Ein Kommentar zum Medium
-     */
-    private String _kommentar;
-
-    /**
-     * Der Titel des Mediums
-     * 
-     */
-    private String _titel;
 
     /**
      * Initialisiert ein neues Exemplar.
@@ -48,12 +37,12 @@ class CD implements Medium
      */
     public CD(String titel, String kommentar, String interpret, int spiellaenge)
     {
+        super(titel, kommentar);
         assert titel != null : "Vorbedingung verletzt: titel != null";
         assert kommentar != null : "Vorbedingung verletzt: kommentar != null";
         assert interpret != null : "Vorbedingung verletzt: interpret != null";
         assert spiellaenge > 0 : "Vorbedingung verletzt: spiellaenge > 0";
-        _titel = titel;
-        _kommentar = kommentar;
+
         _spiellaenge = spiellaenge;
         _interpret = interpret;
     }
@@ -145,9 +134,7 @@ class CD implements Medium
     @Override
     public String getFormatiertenString()
     {
-        return getMedienBezeichnung() + ":\n" + "    " + "Titel: " + _titel
-                + "\n" + "    " + "Kommentar: " + _kommentar + "\n" + "    "
-                + "Interpret: " + _interpret + "\n" + "    " + "Spiellänge: "
-                + _spiellaenge + "\n";
+        return super.getFormatiertenString() + "\n" + "Interpret: " + _interpret
+                + "\n" + "    " + "Spiellänge: " + _spiellaenge + "\n";
     }
 }
