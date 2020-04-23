@@ -1,1 +1,6 @@
-/AbstractMedium.class
+/PCVideospiel.class
+/Videospiel.class
+/AbstractVideospiel.class
+/KonsolenVideospiel.class
+/PCVideospielTest.class
+/KonsolenVideospielTest.class
