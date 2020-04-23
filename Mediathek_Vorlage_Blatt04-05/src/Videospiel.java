@@ -114,6 +114,6 @@ class Videospiel extends AbstractMedium implements Medium
     @Override
     public Geldbetrag berechneMietgebuehr(int mietTage)
     {
-        return super.berechneMietgebuehr(mietTage);
+        return new Geldbetrag(200);
     }
 }
