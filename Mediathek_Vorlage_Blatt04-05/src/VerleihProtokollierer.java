@@ -1,8 +1,8 @@
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class VerleihProtokollierer
 {
-    FileWriter protokoll;
 
     /**
      * Protokolliert Ausleihe oder Rückgabe in einer Verleihkarte
@@ -11,7 +11,21 @@ public class VerleihProtokollierer
      */
     public static void protokolliere(String ereignis, Verleihkarte verleihkarte)
     {
-        System.out.println("Protokolliert! Ausleihe oder Rückgabe");//5.1.3
+        //System.out.println("Protokolliert! Ausleihe oder Rückgabe");//5.1.3
+
+        try
+        {
+            FileWriter protokoll = new FileWriter("./protokoll.xml", true);
+            protokoll.write(verleihkarte.getFormatiertenString() + Datum.heute()
+                    + "\n " + "-----" + "\n");
+            protokoll.close();
+        }
+        catch (IOException e)
+        {
+
+            //e.printStackTrace(); // Eclipse Vorschlag
+            e.toString();
+        }
 
     }
 
