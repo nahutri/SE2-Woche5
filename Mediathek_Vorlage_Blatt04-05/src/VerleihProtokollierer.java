@@ -24,7 +24,9 @@ public class VerleihProtokollierer
         {
 
             //e.printStackTrace(); // Eclipse Vorschlag
-            e.toString();
+            //e.toString();
+            System.err
+                .println("Fehler beim Protkollieren,Datei existiert nicht.");
         }
 
     }
