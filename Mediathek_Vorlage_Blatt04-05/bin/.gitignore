@@ -5,3 +5,10 @@
 /PCVideospielTest.class
 /KonsolenVideospielTest.class
 /VerleihProtokollierer.class
+/VerleihEreignis.class
+/VerleihereignisSorten$VerleihEreignisSorten.class
+/VerleihereignisSorten.class
+/VerleihEreignisTyp.class
+/VerleihEreignisTyp$VerleihEreignis.class
+/VerleihProtokollierer$VerleihEreignis.class
+/VerleihEreignis$VerleihEreignisTyp.class
