@@ -11,7 +11,7 @@ public class VerleihProtokollierer
      */
     //public static void protokolliere(String ereignis, Verleihkarte verleihkarte)
     public static void protokolliere(VerleihEreignis ereignis,
-            Verleihkarte verleihkarte)
+            Verleihkarte verleihkarte) throws ProtokollierException
     {
         //System.out.println("Protokolliert! Ausleihe oder Rückgabe");//5.1.3
 
@@ -27,8 +27,9 @@ public class VerleihProtokollierer
 
             //e.printStackTrace(); // Eclipse Vorschlag
             //e.toString();
-            System.err
-                .println("Fehler beim Protkollieren,Datei existiert nicht.");
+            /*System.err
+                .println("Fehler beim Protkollieren,Datei existiert nicht.");*/
+            new ProtokollierException(e.toString());
         }
 
     }
