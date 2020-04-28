@@ -15,21 +15,20 @@ public class VerleihProtokollierer
     {
         //System.out.println("Protokolliert! Ausleihe oder Rückgabe");//5.1.3
 
-        try
+        try (FileWriter protokoll = new FileWriter("./protokoll.xml", true);)
         {
-            FileWriter protokoll = new FileWriter("./protokoll.xml", true);
+
             protokoll.write(verleihkarte.getFormatiertenString() + Datum.heute()
                     + "\n " + "-----" + "\n");
-            protokoll.close();
+            //protokoll.close();
         }
         catch (IOException e)
         {
 
             //e.printStackTrace(); // Eclipse Vorschlag
             //e.toString();
-            /*System.err
-                .println("Fehler beim Protkollieren,Datei existiert nicht.");*/
-            new ProtokollierException(e.toString());
+
+            throw new ProtokollierException(e.toString());
         }
 
     }
